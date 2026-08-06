@@ -1,0 +1,51 @@
+<style>
+    h1 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    body {
+        text-align: center;
+        background: linear-gradient(to bottom, #ffba5f, #feab7b, #ff7e5f);
+    }
+    div.container {
+        display: flex;
+        margin-top: 50px;
+        gap: 5px;
+    }
+    div.box1 {
+        background: rgba(255,255,255,0.2);
+        width: 350px;
+        text-align: center;
+        color: rgb(92, 143, 237);
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    }
+    div.box2 {
+        background: rgba(255,255,255,0.2);
+        width: 350px;
+        text-align: center;
+        color: rgb(92, 143, 237);
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    }
+    div.box3 {
+        background: rgba(255,255,255,0.2);
+        width: 350px;
+        text-align: center;
+        color: rgb(92, 143, 237);
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    }
+    input.search {
+        width: 1000px;
+        border:none;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.6);
+        height: 40px;
+    }
+</style>
