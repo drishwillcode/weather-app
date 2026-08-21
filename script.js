@@ -13,7 +13,12 @@ button.addEventListener("click", function() {
                 .then(data=> {
                     console.log(data);
                     document.getElementById("city").textContent =data.name;
-                    document.getElementById("temperature").textContent =data.main.temp;
+                    document.getElementById("temperature").textContent =data.main.temp.toFixed(1) + "°C";
+                    document.getElementById("wind-speed").textContent = "speed: " + data.wind.speed + " km/h";
+                    document.getElementById("humidity").textContent = "humidity: " + data.main.humidity + "%";
+                    const iconCode = data.weather[0].icon;
+                    const iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+                    document.getElementById("weathericon").src = iconUrl;
                 })
                 .catch(error=> console.error("error error!!!!", error));
 });
