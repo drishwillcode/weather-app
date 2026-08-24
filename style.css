@@ -1,5 +1,15 @@
+    @import url("https://fonts.googleapis.com/css?family=Limelight");
+    @import url("https://fonts.googleapis.com/css?family=Jura");
     p {
         text-align: center;
+    }
+    #app-title {
+        font-size: 50px;
+        font-family: 'Limelight';
+    }
+    #sunrise,#sunset,#humidity-title,#wind-speed-title,#weather-condition,#temp-feelslike,#today,#city {
+        font-family: 'Jura';
+        font-weight: bold;
     }
     div.search {
         position: relative;
@@ -32,13 +42,20 @@
         border-radius: 50px;
     }
     body {
-        background: linear-gradient(to bottom, #e59150, #5b2d99, #1e2b8d);
+        background: linear-gradient(to bottom, #F8B195, #F67280, #C06C84,#6C5B7B,#355C7D);
     }
     body h1 {
         text-align: center;
         color: white;
     }
+    #temperature {
+        font-size: 90px;
+        font-family: 'Limelight';
+    }
     div.div1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         color: white;
         background: rgba(0,0,0,0.2);
         margin-top: 50px;
@@ -49,6 +66,18 @@
         padding: 30px;
         border-radius: 50px;
         box-sizing: border-box;
+    }
+    #main-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    #icon-container {
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 150px;
     }
     .div1 p {
         text-align: left;
@@ -67,26 +96,60 @@
         gap: 5px;
         text-align: left;
         display: flex;
-        height: 300px;
+        height: 170px;
         justify-content: center;
         gap: 20px;
         border-radius: 50px;
+    }
+    div.div3{
+        color: white;
+        background: rgba(0,0,0,0.2);
+        width: 1060px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 5px;
+        text-align: left;
+        display: flex;
+        height: 170px;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 50px;
+
     }
     div.box1 {
         background: rgba(0,0,0,0.2);
         width: 500px;
         text-align: center;
         border: none;
-        margin-top: 30px;
+        margin-top: 17px;
         border-radius: 50px;
         height: 80%;
     }
     div.box2 {
         text-align: center;
-        margin-top: 30px;
+        margin-top: 17px;
         width: 500px;
         height: 80%;
         border:none;
         border-radius: 50px;
         background: rgba(0,0,0,0.2);
     }
+    div.box3{
+        background: rgba(0,0,0,0.2);
+        width: 500px;
+        text-align: center;
+        border: none;
+        margin-top: 17px;
+        border-radius: 50px;
+        height: 80%;
+ }
+div.box4{
+    background: rgba(0,0,0,0.2);
+        width: 500px;
+        text-align: center;
+        border: none;
+        margin-top: 17px;
+        border-radius: 50px;
+        height: 80%;
+}

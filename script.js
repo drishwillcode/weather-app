@@ -14,8 +14,18 @@ button.addEventListener("click", function() {
                     console.log(data);
                     document.getElementById("city").textContent =data.name;
                     document.getElementById("temperature").textContent =data.main.temp.toFixed(1) + "°C";
-                    document.getElementById("wind-speed").textContent = "speed: " + data.wind.speed + " km/h";
-                    document.getElementById("humidity").textContent = "humidity: " + data.main.humidity + "%";
+                    document.getElementById("wind-speed").textContent = data.wind.speed.toFixed(1) + " km/h";
+                    document.getElementById("humidity").textContent = data.main.humidity + "%";
+                    document.getElementById("temp-feelslike").textContent = "feels like: " + data.main.feels_like.toFixed(1) + "°C";
+                    document.getElementById("sunrisetime").textContent= new Date(data.sys.sunrise * 1000).toLocaleTimeString([],{
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    document.getElementById("sunsettime").textContent= new Date(data.sys.sunset * 1000).toLocaleTimeString([],{
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    document.getElementById("weather-condition").textContent = data.weather[0].description;
                     const iconCode = data.weather[0].icon;
                     const iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
                     document.getElementById("weathericon").src = iconUrl;

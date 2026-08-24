@@ -4,33 +4,44 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>☀️🌖🌙⭐☔❄️🔥</h1>
+    <h1 id="app-title">WEATHER</h1>
     <div class="search">
         <input id="searchcity" type="text" placeholder="Enter city name">
-        <button id="searchbtn" class="search-button">Search</button>
+        <button id="searchbtn" class="search-button">search</button>
     </div>
     <div class="div1">
-        <div id="main info">
-            <p id="today">TODAY</p>
+        <div id="main-info">
+            <p id="today" ,>TODAY</p>
             <p id="city">delhi</p>
             <p id="temperature" class="temperature"> 25°C</p>
         </div>
-        <div id="weathericon">
+        <div id="icon-container">
+            <p id="weather-condition",>weather condition</p>
             <img id="weathericon">
+            <p id="temp-feelslike">feels like: 25°C</p>
         </div>
     </div>
     <div class="div2">
         <div class="box1">
-            <h2>wind speed</h2>
-            <p id="wind-speed">speed: 10 km/h</p>
-            <p>feels like:i'll fly away</p>
+            <h2 id="wind-speed-title">Wind Speed</h2>
+            <p id="wind-speed">10 km/h</p>
+            
         </div>
         <div class="box2">
-            <h2>humidity</h2>
-            <p id="humidity">humidity: 50%</p>
-            <p>feels like: a little wet</p>
+            <h2 id="sunrise" font-family="Jura">Sunrise Time</h2>
+            <p id="sunrisetime">6:00 AM</p>  
+            
         </div>
     </div>
+    <div class="div3">
+        <div class="box3">
+            <h2 id="humidity-title">Humidity</h2>
+            <p id="humidity">50%</p>
+        </div>
+        <div class="box4">
+            <h2 id="sunset" font-family="Jura">Sunset Time</h2>
+            <p id="sunsettime">6:00 PM</p> 
+        </div>    
 <script src="script.js"></script>
 </body>
 </html>
