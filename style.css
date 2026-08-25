@@ -7,7 +7,7 @@
         font-size: 50px;
         font-family: 'Limelight';
     }
-    #sunrise,#sunset,#humidity-title,#wind-speed-title,#weather-condition,#temp-feelslike,#today,#city {
+    #sunrise,#sunset,#humidity-title,#wind-speed-title,#weather-condition,#temp-feelslike,#today,#city,#datetime{
         font-family: 'Jura';
         font-weight: bold;
     }

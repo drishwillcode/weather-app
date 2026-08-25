@@ -29,6 +29,22 @@ button.addEventListener("click", function() {
                     const iconCode = data.weather[0].icon;
                     const iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
                     document.getElementById("weathericon").src = iconUrl;
+                    
+                    const timezone=data.timezone;
+                    const now=new Date();
+                    const citytime=new Date(now.getTime() + timezone*1000);
+                    const styling={
+                        month:'long',
+                        day:'numeric',
+                    };
+                    const date=citytime.toLocaleDateString(undefined,styling);
+                    const hours = String(citytime.getUTCHours()).padStart(2, "0");
+                    const minutes = String(citytime.getUTCMinutes()).padStart(2, "0");
+
+                    const dateTime = `${date}, ${hours}${minutes}hrs`;
+                    document.getElementById("datetime").textContent=dateTime;
+
+                    
                 })
                 .catch(error=> console.error("error error!!!!", error));
 });
