@@ -8,6 +8,7 @@ api_key=os.getenv('API_KEY')
 
 @dataclass
 class weatherdata:
+    name: str
     temp: float
     feels_like: float
     description: str
@@ -19,14 +20,15 @@ class weatherdata:
 
 
 def get_lat_long(city,api_key):
-    resp=requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q=+{city}&appid={api_key}").json()
+    resp=requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q={city}&appid={api_key}").json()
     data=resp[0]
     lat,lon=data.get('lat'),data.get('lon')
     return lat,lon
 
 def get_current_weather(lat,lon,api_key):
-    resp=requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lat}&units=metric&appid={api_key}").json()
+    resp=requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={api_key}").json()
     data=weatherdata(
+        name=resp.get('name'),
         temp=resp.get('main').get('temp'),
         feels_like=resp.get('main').get('feels_like'),
         description=resp.get('weather')[0].get('description'),
@@ -39,6 +41,12 @@ def get_current_weather(lat,lon,api_key):
     )
     return data
 
+def main(city_name):
+    lat,lon=get_lat_long(city_name,api_key)
+    return get_current_weather(lat,lon,api_key)
+
+
+
 if __name__=="__main__":
-    lat,lon=get_lat_long("delhi",api_key)
+    lat,lon=get_lat_long("kolkata",api_key)
     print(get_current_weather(lat,lon,api_key))
