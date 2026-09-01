@@ -22,12 +22,18 @@ class weatherdata:
 
 def get_lat_long(city,api_key):
     resp=requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q={city}&appid={api_key}").json()
-    data=resp[0]
-    lat,lon=data.get('lat'),data.get('lon')
-    return lat,lon
+    if not resp:
+        return None,None
+    else:
+        data=resp[0]
+        
+        lat,lon=data.get('lat'),data.get('lon')
+        return lat,lon
 
 def get_current_weather(lat,lon,api_key):
     resp=requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={api_key}").json()
+    if not resp:
+        return None
     data=weatherdata(
         name=resp.get('name'),
         temp=resp.get('main').get('temp'),
@@ -44,7 +50,10 @@ def get_current_weather(lat,lon,api_key):
 
 def main(city_name):
     lat,lon=get_lat_long(city_name,api_key)
-    return get_current_weather(lat,lon,api_key)
+    if lat is None or lon is None:
+        return None
+    else:
+        return get_current_weather(lat,lon,api_key)
 
 
 

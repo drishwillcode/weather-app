@@ -1,9 +1,18 @@
 const button = document.getElementById("searchbtn");
-button.addEventListener("click", function() {
-    const city = document.getElementById("searchcity").value;
-    
+const to_search = document.getElementById("searchcity");
+
+function searchweather(){
+    const city = to_search.value;
+
     fetch(`/weather?city=${city}`)
-        .then(response=> response.json())
+        .then(response=> {
+            if (!response.ok){
+                return response.json().then(data=>{
+                    throw new Error(data.error)
+                });
+            }
+            return response.json();
+             })
         .then(data=> {
                     console.log(data);
                     document.getElementById("city").textContent =data.name;
@@ -40,8 +49,20 @@ button.addEventListener("click", function() {
 
                     
                 })
-                .catch(error=> console.error("error error!!!!", error));
-});
+                .catch(error=>{
+                        document.getElementById("city").textContent=error.message;
+                        document.getElementById("weathericon").src="";
+                        document.querySelectorAll(".weather-data").forEach(element=>{
+                            element.textContent="--";
+                    });
+                });
+            }
+button.addEventListener("click", searchweather);
+to_search.addEventListener("keydown", function(event){
+    if(event.key==="Enter"){
+        searchweather();
+    }
+})
 
         
    

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
-    <h1 id="app-title">WEATHER</h1>
+    <h1 id="app-title"><span>W</span><span>E</span><span>A</span><span>T</span><span>H</span><span>E</span><span>R</span></h1>
     <div class="search">
         <input id="searchcity" type="text" placeholder="Enter city name">
         <button id="searchbtn" class="search-button">search</button>
@@ -12,37 +12,38 @@
     <div class="div1">
         <div id="main-info">
             <p id="today" ,>TODAY</p>
-            <p id="datetime">--</p>
+            <p id="datetime", class="weather-data">--</p>
             <p id="city">--</p>
-            <p id="temperature" class="temperature">--</p>
+            <p id="temperature" class="weather-data">--</p>
         </div>
         <div id="icon-container">
-            <p id="weather-condition",>weather condition</p>
+            <p id="weather-condition" class="weather-data">weather condition</p>
             <img id="weathericon">
-            <p id="temp-feelslike">feels like: --</p>
+            <p id="temp-feelslike" class="weather-data">feels like: --</p>
         </div>
     </div>
     <div class="div2">
         <div class="box1">
             <h2 id="wind-speed-title">Wind Speed</h2>
-            <p id="wind-speed">--</p>
+            <p id="wind-speed" class="weather-data">--</p>
             
         </div>
         <div class="box2">
             <h2 id="sunrise" font-family="Jura">Sunrise Time</h2>
-            <p id="sunrisetime">--</p> 
+            <p id="sunrisetime" class="weather-data">--</p> 
             
         </div>
     </div>
     <div class="div3">
         <div class="box3">
             <h2 id="humidity-title">Humidity</h2>
-            <p id="humidity">--</p>
+            <p id="humidity" class="weather-data">--</p>
         </div>
         <div class="box4">
             <h2 id="sunset" font-family="Jura">Sunset Time</h2>
-            <p id="sunsettime">--</p> 
-        </div>    
+            <p id="sunsettime" class="weather-data">--</p>
+        </div>
+    </div>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

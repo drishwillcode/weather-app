@@ -12,6 +12,8 @@ def index():
 def weather():
     city=request.args.get("city")
     data=main(city)
+    if data is None:
+        return jsonify({'error':"City not found"}),404
     return jsonify(data.__dict__)
 if __name__ == "__main__":
     app.run(debug=True)

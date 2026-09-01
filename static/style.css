@@ -6,7 +6,19 @@
     #app-title {
         font-size: 50px;
         font-family: 'Limelight';
+        span{transition: color 0.3s ease;}
     }
+    #app-title span:nth-child(1):hover{color:#f94144}
+    #app-title   span:nth-child(2):hover{color:#f8961e}
+    #app-title    span:nth-child(3):hover{color:#f9c74f}
+    #app-title    span:nth-child(4):hover{color:#90be6d}
+    #app-title    span:nth-child(5):hover{color:#43aa8b}
+    #app-title    span:nth-child(6):hover{color:#577590}
+    #app-title    span:nth-child(7):hover{color:#277da1}
+
+            
+        
+    
     #sunrise,#sunset,#humidity-title,#wind-speed-title,#weather-condition,#temp-feelslike,#today,#city,#datetime{
         font-family: 'Jura';
         font-weight: bold;
