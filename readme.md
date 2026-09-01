@@ -4,7 +4,7 @@
 
 ## **LIVE DEMO**: https://drish-weather-app.onrender.com
 
-##Features
+## Features
 - Search by city
 - current temperature
 - Weather Condition
