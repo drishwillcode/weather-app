@@ -59,10 +59,12 @@ function searchweather(){
             }
 button.addEventListener("click", searchweather);
 to_search.addEventListener("keydown", function(event){
-    if(event.key==="Enter"){
+    if (event.key === "Enter") {
         searchweather();
     }
-})
+});
+
+
 
         
    

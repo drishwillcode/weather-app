@@ -53,6 +53,8 @@
         background: rgba(0, 0, 0, 0.2);
         border-radius: 50px;
     }
+   
+    
     body {
         background: linear-gradient(to bottom, #F8B195, #F67280, #C06C84,#6C5B7B,#355C7D);
     }
