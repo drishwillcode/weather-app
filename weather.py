@@ -17,6 +17,7 @@ class weatherdata:
     sunrise: int
     sunset: int
     icon: str
+    timezone:int
 
 
 def get_lat_long(city,api_key):
@@ -36,8 +37,8 @@ def get_current_weather(lat,lon,api_key):
         wind_speed=resp.get('wind').get('speed'),
         sunrise=resp.get('sys').get('sunrise'),
         sunset=resp.get('sys').get('sunset'),
-        icon=resp.get('weather')[0].get('icon')
-
+        icon=resp.get('weather')[0].get('icon'),
+        timezone=resp.get('timezone')
     )
     return data
 
